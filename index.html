@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Endorse Claire Tsukuda — Top 50 Women in Tax Technology</title>
+<style>
+  :root {
+    --bg: #faf9f7;
+    --card: #ffffff;
+    --ink: #1a1a2e;
+    --ink-soft: #4a4a6a;
+    --muted: #8a8aa3;
+    --accent: #6366f1;
+    --accent-soft: #eef2ff;
+    --accent-dark: #4f46e5;
+    --border: #e8e8ee;
+    --border-strong: #d1d1dc;
+    --success: #10b981;
+    --success-soft: #d1fae5;
+    --warn: #f59e0b;
+    --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+    --shadow-lg: 0 4px 24px rgba(99,102,241,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding: 32px 16px 80px;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .header-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--accent-dark);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+
+  .header-link:hover {
+    background: var(--accent-soft);
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+
+  .step {
+    margin-bottom: 28px;
+  }
+
+  .step:last-child { margin-bottom: 0; }
+
+  .step-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .hint {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-left: auto;
+  }
+
+  .options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .option {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .option-tile {
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    background: var(--card);
+    transition: all 0.15s ease;
+    font-size: 14px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+  }
+
+  .option-tile::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--border-strong);
+    border-radius: 5px;
+    flex-shrink: 0;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .option input[type="radio"] + .option-tile::before {
+    border-radius: 50%;
+  }
+
+  .option:hover .option-tile {
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+
+  .option input:checked + .option-tile {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    font-weight: 500;
+  }
+
+  .option input:checked + .option-tile::before {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .option input[type="checkbox"]:checked + .option-tile::before {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .option input[type="radio"]:checked + .option-tile::before {
+    box-shadow: inset 0 0 0 3px white;
+  }
+
+  textarea, input[type="text"] {
+    width: 100%;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--card);
+    transition: border-color 0.15s ease;
+    resize: vertical;
+  }
+
+  .other-reveal {
+    display: none;
+    margin-top: 10px;
+    animation: revealIn 0.2s ease;
+  }
+
+  .other-reveal.visible {
+    display: block;
+  }
+
+  .other-reveal input {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  .other-reveal input::placeholder {
+    color: var(--accent-dark);
+    opacity: 0.6;
+  }
+
+  @keyframes revealIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  textarea:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  textarea {
+    min-height: 70px;
+  }
+
+  .generate-btn {
+    width: 100%;
+    background: var(--ink);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .generate-btn:hover:not(:disabled) {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .generate-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .output-card {
+    background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%);
+    border: 1.5px solid var(--accent);
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 16px;
+    display: none;
+    animation: slideIn 0.3s ease;
+  }
+
+  .output-card.visible {
+    display: block;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .output-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .char-count {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: var(--success-soft);
+    color: var(--success);
+  }
+
+  .char-count.short {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  #output-text {
+    width: 100%;
+    min-height: 140px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: white;
+    resize: vertical;
+  }
+
+  #output-text:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .output-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .action-btn {
+    flex: 1;
+    padding: 11px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: 1.5px solid var(--border);
+    background: white;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .action-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+  }
+
+  .action-btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .action-btn.primary:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+  }
+
+  .action-btn.copied {
+    background: var(--success) !important;
+    border-color: var(--success) !important;
+    color: white !important;
+  }
+
+  .loading {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .vote-cta {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--accent-soft);
+    border-radius: 12px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .vote-cta.visible { display: flex; }
+
+  .vote-cta-text {
+    font-size: 14px;
+    color: var(--accent-dark);
+  }
+
+  .vote-cta-text strong { font-weight: 600; }
+
+  .vote-cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.15s ease;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.25);
+  }
+
+  .vote-cta-btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99,102,241,0.35);
+  }
+
+  .error {
+    color: #dc2626;
+    font-size: 13px;
+    padding: 12px;
+    background: #fef2f2;
+    border-radius: 8px;
+    margin-top: 12px;
+    display: none;
+  }
+
+  .error.visible { display: block; }
+
+  .footer-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 26px; }
+    .card { padding: 20px; }
+    .options { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="badge">⭐ Top 50 Women in Tax Tech 2026</span>
+      <h1>Endorse Claire Tsukuda</h1>
+      <p class="subtitle">Help Claire by writing a quick endorsement — answer a few questions and we'll draft it for you. Edit as needed, then copy and submit.</p>
+      <a href="https://www.taxtech500.com/top-50-women-in-tax-technology-2026" target="_blank" rel="noopener noreferrer" class="header-link">
+        Go straight to voting page →
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="step">
+        <div class="step-label">
+          <span class="step-num">1</span>
+          <span>Your relationship to Claire</span>
+        </div>
+        <div class="options" id="relationship-options">
+          <label class="option">
+            <input type="radio" name="relationship" value="Kipsi customer or end user" />
+            <div class="option-tile">Kipsi customer / end user</div>
+          </label>
+          <label class="option">
+            <input type="radio" name="relationship" value="Kipsi investor" />
+            <div class="option-tile">Kipsi investor</div>
+          </label>
+          <label class="option">
+            <input type="radio" name="relationship" value="past colleague of Claire" />
+            <div class="option-tile">Past colleague</div>
+          </label>
+          <label class="option">
+            <input type="radio" name="relationship" value="__other__" id="rel-other-radio" />
+            <div class="option-tile">Other</div>
+          </label>
+        </div>
+        <div class="other-reveal" id="rel-other-reveal">
+          <input type="text" id="rel-other-text" placeholder="Describe your relationship to Claire (e.g. 'industry peer', 'mentor of mine', 'board advisor')" />
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">
+          <span class="step-num">2</span>
+          <span>What to highlight</span>
+          <span class="hint">Pick 1–3</span>
+        </div>
+        <div class="options" id="quality-options">
+          <label class="option">
+            <input type="checkbox" name="quality" value="ethical leadership" />
+            <div class="option-tile">Ethical leadership</div>
+          </label>
+          <label class="option">
+            <input type="checkbox" name="quality" value="product vision" />
+            <div class="option-tile">Product vision</div>
+          </label>
+          <label class="option">
+            <input type="checkbox" name="quality" value="building culture" />
+            <div class="option-tile">Building culture</div>
+          </label>
+          <label class="option">
+            <input type="checkbox" name="quality" value="female role model" />
+            <div class="option-tile">Female role model</div>
+          </label>
+          <label class="option">
+            <input type="checkbox" name="quality" value="technical expertise in tax technology" />
+            <div class="option-tile">Tax tech expertise</div>
+          </label>
+          <label class="option">
+            <input type="checkbox" name="quality" value="customer dedication and partnership" />
+            <div class="option-tile">Customer partnership</div>
+          </label>
+          <label class="option">
+            <input type="checkbox" name="quality" value="__other__" id="qual-other-checkbox" />
+            <div class="option-tile">Other</div>
+          </label>
+        </div>
+        <div class="other-reveal" id="qual-other-reveal">
+          <input type="text" id="qual-other-text" placeholder="Describe what else to highlight (e.g. 'her grit raising the seed round', 'how she handles tough customer feedback')" />
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">
+          <span class="step-num">3</span>
+          <span>Tone</span>
+        </div>
+        <div class="options">
+          <label class="option">
+            <input type="radio" name="tone" value="warm and personal" checked />
+            <div class="option-tile">Warm & personal</div>
+          </label>
+          <label class="option">
+            <input type="radio" name="tone" value="professional and measured" />
+            <div class="option-tile">Professional</div>
+          </label>
+          <label class="option">
+            <input type="radio" name="tone" value="enthusiastic and energetic" />
+            <div class="option-tile">Enthusiastic</div>
+          </label>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">
+          <span class="step-num">4</span>
+          <span>Length</span>
+        </div>
+        <div class="options">
+          <label class="option">
+            <input type="radio" name="length" value="brief" />
+            <div class="option-tile">Brief (~75 chars)</div>
+          </label>
+          <label class="option">
+            <input type="radio" name="length" value="medium" checked />
+            <div class="option-tile">Medium (~150 chars)</div>
+          </label>
+          <label class="option">
+            <input type="radio" name="length" value="detailed" />
+            <div class="option-tile">Detailed (~300 chars)</div>
+          </label>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">
+          <span class="step-num">5</span>
+          <span>A specific story or detail</span>
+          <span class="hint">Optional but powerful</span>
+        </div>
+        <textarea id="anecdote" placeholder="E.g. 'She walked our team through a tricky multi-state apportionment problem and never made us feel slow' or 'She rebuilt the product roadmap after our feedback in Q2.'"></textarea>
+      </div>
+
+      <div class="step">
+        <div class="step-label">
+          <span class="step-num">6</span>
+          <span>Your name & title</span>
+          <span class="hint">Optional</span>
+        </div>
+        <input type="text" id="endorser-name" placeholder="e.g. Jane Smith, VP of Tax at Acme Corp" />
+      </div>
+
+      <button class="generate-btn" id="generate-btn" onclick="generateEndorsement()">
+        <span id="btn-text">Draft my endorsement</span>
+      </button>
+
+      <div class="error" id="error-msg"></div>
+    </div>
+
+    <div class="output-card" id="output-card">
+      <div class="output-header">
+        <span class="output-title">Your endorsement (edit as needed)</span>
+        <span class="char-count" id="char-count">0 chars</span>
+      </div>
+      <textarea id="output-text" oninput="updateCharCount()"></textarea>
+      <div class="output-actions">
+        <button class="action-btn" onclick="regenerate()" id="regen-btn">
+          ↻ Regenerate
+        </button>
+        <button class="action-btn primary" onclick="copyEndorsement()" id="copy-btn">
+          📋 Copy endorsement
+        </button>
+      </div>
+      <div class="vote-cta" id="vote-cta">
+        <div class="vote-cta-text"><strong>Last step:</strong> Open the voting page, then paste your endorsement into the form.</div>
+        <a href="https://www.taxtech500.com/top-50-women-in-tax-technology-2026" target="_blank" rel="noopener noreferrer" class="vote-cta-btn">
+          Open voting page →
+        </a>
+      </div>
+    </div>
+
+    <p class="footer-note">Thank you for supporting Claire's nomination 💜</p>
+  </div>
+
+<script>
+  function getSelected(name, multi = false) {
+    const inputs = document.querySelectorAll(`input[name="${name}"]:checked`);
+    if (multi) return Array.from(inputs).map(i => i.value);
+    return inputs[0]?.value || '';
+  }
+
+  // Toggle reveal inputs when "Other" is selected
+  function setupOtherReveal(triggerId, revealId, textId) {
+    const trigger = document.getElementById(triggerId);
+    const reveal = document.getElementById(revealId);
+    const text = document.getElementById(textId);
+
+    // Listen to all inputs in the same group so we hide when user picks something else
+    const groupName = trigger.name;
+    document.querySelectorAll(`input[name="${groupName}"]`).forEach(input => {
+      input.addEventListener('change', () => {
+        if (trigger.checked) {
+          reveal.classList.add('visible');
+          setTimeout(() => text.focus(), 50);
+        } else {
+          reveal.classList.remove('visible');
+        }
+      });
+    });
+  }
+
+  setupOtherReveal('rel-other-radio', 'rel-other-reveal', 'rel-other-text');
+  setupOtherReveal('qual-other-checkbox', 'qual-other-reveal', 'qual-other-text');
+
+  function showError(msg) {
+    const el = document.getElementById('error-msg');
+    el.textContent = msg;
+    el.classList.add('visible');
+    setTimeout(() => el.classList.remove('visible'), 5000);
+  }
+
+  function setLoading(loading) {
+    const btn = document.getElementById('generate-btn');
+    const txt = document.getElementById('btn-text');
+    btn.disabled = loading;
+    if (loading) {
+      txt.innerHTML = '<span class="loading"></span> Drafting...';
+    } else {
+      txt.textContent = 'Draft my endorsement';
+    }
+  }
+
+  function updateCharCount() {
+    const text = document.getElementById('output-text').value;
+    const count = text.length;
+    const el = document.getElementById('char-count');
+    el.textContent = `${count} chars`;
+    if (count < 60) {
+      el.classList.add('short');
+      el.textContent = `${count} chars — needs 60+`;
+    } else {
+      el.classList.remove('short');
+    }
+  }
+
+  async function generateEndorsement() {
+    let relationship = getSelected('relationship');
+    let qualities = getSelected('quality', true);
+    const tone = getSelected('tone');
+    const length = getSelected('length');
+    const anecdote = document.getElementById('anecdote').value.trim();
+    const endorserName = document.getElementById('endorser-name').value.trim();
+
+    // Swap in the custom "Other" text for relationship if selected
+    if (relationship === '__other__') {
+      const custom = document.getElementById('rel-other-text').value.trim();
+      if (!custom) {
+        showError('Please describe your relationship to Claire in the "Other" field.');
+        return;
+      }
+      relationship = custom;
+    }
+
+    // Swap in custom "Other" text for qualities if selected
+    const qualOtherIdx = qualities.indexOf('__other__');
+    if (qualOtherIdx !== -1) {
+      const custom = document.getElementById('qual-other-text').value.trim();
+      if (!custom) {
+        showError('Please describe what to highlight in the "Other" field.');
+        return;
+      }
+      qualities[qualOtherIdx] = custom;
+    }
+
+    if (!relationship) {
+      showError('Please pick how you know Claire (step 1).');
+      return;
+    }
+    if (qualities.length === 0) {
+      showError('Please pick at least one quality to highlight (step 2).');
+      return;
+    }
+
+    const lengthGuide = {
+      brief: 'around 75–100 characters (1 short sentence)',
+      medium: 'around 150–200 characters (1–2 sentences)',
+      detailed: 'around 280–350 characters (2–3 sentences)'
+    }[length];
+
+    const prompt = `You are helping someone write an authentic, first-person endorsement of Claire Tsukuda, who has been nominated as one of the Top 50 Women in Tax Technology. Claire is the founder/leader of Kipsi, a tax technology company.
+
+Write the endorsement from the perspective of: ${relationship}.
+
+Qualities to highlight: ${qualities.join(', ')}.
+
+Tone: ${tone}.
+
+Target length: ${lengthGuide}. MUST be at least 60 characters.
+
+${anecdote ? `Specific story or detail the endorser wants to include: "${anecdote}". Weave this in naturally — do not just append it.` : ''}
+
+${endorserName ? `The endorser's name and title: ${endorserName}. Do NOT include their name in the endorsement text itself (it will be added separately by the voting form).` : ''}
+
+Rules:
+- Write in first person, as if the endorser is writing it themselves.
+- Sound human and specific, not like marketing copy. Avoid words like "synergy," "leverage," "best-in-class," "game-changer," "transformative."
+- Do not start with "I endorse..." or "I'm writing to endorse..." — start naturally.
+- Do not use Claire's last name repeatedly; "Claire" is fine after the first mention.
+- Do not include hashtags, emoji, or quotation marks around the whole thing.
+- Return ONLY the endorsement text. No preamble, no explanation, no sign-off.`;
+
+    setLoading(true);
+    document.getElementById('error-msg').classList.remove('visible');
+
+    try {
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt })
+      });
+
+      if (!response.ok) {
+        throw new Error(`API returned ${response.status}`);
+      }
+
+      const data = await response.json();
+      const text = (data.text || '').trim().replace(/^["']|["']$/g, '');
+
+      document.getElementById('output-text').value = text;
+      document.getElementById('output-card').classList.add('visible');
+      document.getElementById('vote-cta').classList.add('visible');
+      updateCharCount();
+
+      // smooth scroll to output
+      setTimeout(() => {
+        document.getElementById('output-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+
+    } catch (err) {
+      console.error(err);
+      showError('Something went wrong drafting your endorsement. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function regenerate() {
+    generateEndorsement();
+  }
+
+  async function copyEndorsement() {
+    const text = document.getElementById('output-text').value;
+    const btn = document.getElementById('copy-btn');
+    try {
+      await navigator.clipboard.writeText(text);
+      btn.classList.add('copied');
+      btn.innerHTML = '✓ Copied!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = '📋 Copy endorsement';
+      }, 2000);
+    } catch (err) {
+      // fallback
+      const ta = document.getElementById('output-text');
+      ta.select();
+      document.execCommand('copy');
+      btn.classList.add('copied');
+      btn.innerHTML = '✓ Copied!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = '📋 Copy endorsement';
+      }, 2000);
+    }
+  }
+</script>
+</body>
+</html>
