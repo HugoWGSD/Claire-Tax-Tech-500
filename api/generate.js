@@ -69,7 +69,11 @@ module.exports = async function handler(req, res) {
       .filter(b => b.type === 'text')
       .map(b => b.text)
       .join('')
-      .trim();
+      .trim()
+      // Strip em/en dashes, which read as AI-written. "a — b" becomes "a, b".
+      .replace(/\s*[—–]\s*/g, ', ')
+      .replace(/,\s*([.!?])/g, '$1')
+      .replace(/,\s*,/g, ',');
 
     return res.status(200).json({ text });
   } catch (err) {
